@@ -5,14 +5,14 @@ struct node{
     struct node*next;
 };
 struct node *head=NULL,*temp;
-push(int val){
+void push(int val){
     struct node*newnode =malloc(sizeof(struct node));
     newnode->data=val;
     newnode->next=head;
     head=newnode;
 
 }
-pop(){
+void pop(){
     if(head==NULL){
         printf("stack is empty\n");
     }
