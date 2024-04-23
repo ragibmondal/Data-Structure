@@ -58,94 +58,24 @@ void cleanupMemory() {
     }
 }
 
-void interface() {
-    system("color 4F");
+
+void interface()
+{
+    system("color 1F"); // Set the text color to blue and background color to white
+
     printf("\n\n\n\n");
-    printf("\t~~~~~~~~~~~~~~~~~~~~~"
-           "~~~~~~~~~~~~~~~~~~~~~~~~"
-           "~~~~~~~~~~~~~~~~~~~~~~~~"
-           "~~~~~~~~~~~~~~~~~~~~~~"
-           "~~~~~~~~~~\n");
-    // ...
-}
 
-int main() {
-    loadTasksFromFile();
+    printf("\t_____________________________________________________________________\n");
+    printf("\t_____________________________________________________________________\n\n");
 
-    int choice;
-    while (1) {
-        system("cls");
-        printf("1. Login\n");
-        printf("2. Register\n");
-        printf("3. Exit\n");
+    printf("\t{ } : { } : { } : { } : { } : { } :   WELCOME TO THE TODO LIST     : { } : { } : { } : { } : { }\n\n");
 
-        printf("\n\nEnter your choice: ");
-        scanf("%d", &choice);
+    printf("\t_____________________________________________________________________\n");
+    printf("\t_____________________________________________________________________\n");
 
-        switch (choice) {
-            case 1:
-                // login logic
-                break;
-            case 2:
-                // register logic
-                break;
-            case 3:
-                saveTasksToFile();
-                cleanupMemory();
-                exit(0);
-                break;
-        }
+    printf("\n\n\n\t\t\t\t\t\t\t\t\t\tby Phantom Troupe\n\n\n\n");
 
-        while (1) {
-            system("cls");
-            printf("1. See ToDo list\n");
-            printf("2. Create new ToDo\n");
-            printf("3. Update ToDo\n");
-            printf("4. Delete ToDo\n");
-            printf("5. Exit\n");
-            printf("6. Mark as completed\n");
-            printf("7. See upcoming tasks\n");
-            printf("8. See completed tasks\n");
-            printf("9. See tasks for date\n");
-
-            printf("\n\nEnter your choice: ");
-            scanf("%d", &choice);
-
-            switch (choice) {
-                case 1:
-                    seeToDo();
-                    break;
-                case 2:
-                    createToDo();
-                    break;
-                case 3:
-                    updateToDo();
-                    break;
-                case 4:
-                    deleteToDo();
-                    break;
-                case 5:
-                    saveTasksToFile();
-                    cleanupMemory();
-                    exit(0);
-                    break;
-                case 6:
-                    markCompleted();
-                    break;
-                case 7:
-                    checkUpcomingTasks();
-                    break;
-                case 8:
-                    checkCompletedTasks();
-                    break;
-                case 9:
-                    checkTasksForDate();
-                    break;
-            }
-        }
-    }
-
-    return 0;
+    system("pause");
 }
 
 void seeToDo() {
@@ -373,4 +303,61 @@ void checkTasksForDate() {
 
     printf("\n\n\n");
     system("pause");
+}
+
+int main() {
+    loadTasksFromFile();
+
+    interface();
+
+    int choice;
+    while (1) {
+        system("cls");
+        printf("1. See ToDo list\n");
+        printf("2. Create new ToDo\n");
+        printf("3. Update ToDo\n");
+        printf("4. Delete ToDo\n");
+        printf("5. Exit\n");
+        printf("6. Mark as completed\n");
+        printf("7. See upcoming tasks\n");
+        printf("8. See completed tasks\n");
+        printf("9. See tasks for date\n");
+
+        printf("\n\nEnter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                seeToDo();
+                break;
+            case 2:
+                createToDo();
+                break;
+            case 3:
+                updateToDo();
+                break;
+            case 4:
+                deleteToDo();
+                break;
+            case 5:
+                saveTasksToFile();
+                cleanupMemory();
+                exit(0);
+                break;
+            case 6:
+                markCompleted();
+                break;
+            case 7:
+                checkUpcomingTasks();
+                break;
+            case 8:
+                checkCompletedTasks();
+                break;
+            case 9:
+                checkTasksForDate();
+                break;
+        }
+    }
+
+    return 0;
 }
